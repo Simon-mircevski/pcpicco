@@ -27,6 +27,7 @@ public class ProductsController {
         List<Product> list = productRepository.findAll();
         model.addAttribute("client", Roles.CLIENT);
         model.addAttribute("seller_admin", Roles.SELLER_ADMIN);
+        model.addAttribute("admin", Roles.ADMIN);
         model.addAttribute("products",list);
         return "products";
     }

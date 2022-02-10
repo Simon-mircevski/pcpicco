@@ -46,4 +46,13 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
+
+    @Override
+    public User addSellerAdmin(String email, String password, String repeatpassword) {
+        if(!password.equals(repeatpassword)){
+            throw new IllegalArgumentException();
+        }
+        User user = new User(email,password, Roles.SELLER_ADMIN);
+        return this.userRepository.save(user);
+    }
 }

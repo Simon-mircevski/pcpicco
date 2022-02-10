@@ -132,53 +132,25 @@
 </nav>
 <!-- Navbar -->
 <th:block xmlns:th="http://www.thymeleaf.org">
-    <form th:method="POST" th:action="@{/products/add}">
+    <form th:method="POST" th:action="@{/add/sellerAdmin}">
         <div style="width: 500px; margin-left: 50px">
-            <label for="name">Name</label>
-            <input class="form-control" placeholder="Name" type="text" id="name" name="name">
+            <label for="email">Email</label>
+            <input class="form-control" placeholder="E-mail" type="text" id="email" name="email">
         </div>
         <div style="width: 500px; margin-left: 50px">
-            <label for="Description">Description</label>
-            <input class="form-control" placeholder="Description" type="text" id="description" name="description">
+            <label for="password">Password</label>
+            <input class="form-control" placeholder="Password"  type="password" id="password" name="password">
         </div>
         <div style="width: 500px; margin-left: 50px">
-            <label for="type">Type</label>
-            <input class="form-control" placeholder="Type" type="text" id="type" name="type">
-        </div>
-        <div style="width: 500px; margin-left: 50px">
-            <label for="price">Price</label>
-            <input class="form-control" placeholder="Price" type="number" id="price" name="price">
-        </div>
-        <div style="width: 500px; margin-left: 50px">
-            <label for="quantity">Quantity</label>
-            <input class="form-control" placeholder="Quantity" type="number" id="quantity" name="quantity">
-        </div>
-        <div style="margin-left: 50px" class="form-group">
-            <label for="store_name">Store</label>
-            <select style="width: 500px" name="store_name" id="store_name" class="form-control">
-                <option th:each="store: ${stores}"
-                        th:text="${store.getName()}"
-                        th:value="${store.getName()}">
-                </option>
-            </select>
-        </div>
-        <div style="width: 500px; margin-left: 50px">
-            <label for="url">Image Url</label>
-            <input class="form-control" placeholder="Image URL" type="text" id="url" name="url">
-            <input type="button" onclick="showImage()" value="Preview Image">
-            <div id="preview">
-
-            </div>
+            <label for="repeatPassword">Repeat Password</label>
+            <input class="form-control" placeholder="Repeat Password"  type="password" id="repeatPassword" name="repeatPassword">
         </div>
         <br>
-        <button style="margin-left: 50px;" class="btn btn-primary" type="submit" value="Submit">Submit</button>
+        <input id="submit" style="margin-left: 50px" type="submit" th:value="Submit">
+        <br>
+
     </form>
-<script>
-    function showImage(){
-        var imageUrl = document.getElementById("url").value;
-        document.getElementById("preview").innerHTML = ("<img src='" + imageUrl + "'></img>");
-    }
-</script>
+
 </th:block>
 
 

@@ -156,6 +156,11 @@
             <a href="/products/add-form" class="btn btn-block btn-dark">Add Product</a>
         </th:block>
     </th:block>
+    <th:block th:if="${session.user!=null}">
+        <th:block th:if="${session.user.getRole().toString() == admin.toString()}">
+            <a href="/add/sellerAdmin" class="btn btn-block btn-dark">Add Seller Admin</a>
+        </th:block>
+    </th:block>
 </th:block>
 
 
