@@ -5,12 +5,12 @@ services:
     #   Use the Docker Image postgres. This will pull the newest release.
     image: "postgres"
     #   Give the container the name my_postgres. You can changes to something else.
-    container_name: "pcpicco"
+    container_name: "PCPicco"
     #   Setup the username, password, and database name. You can changes these values.
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=wp123
-      - POSTGRES_DB=pcpicco
+      - POSTGRES_DB=PCPicco
     #   Maps port 5432 (localhost) to port 5432 on the container. You can change the ports to fix your needs.
     ports:
       - "5432:5432"
